@@ -1,0 +1,111 @@
+// Includes
+@import
+url("https://fonts.googleapis.com/css?family=Inconsolata|Cantarell|Droid+Sans+Mono");
+
+// Gridwork
+@column: 30px;
+@margin: 10px;
+@max_columns: 24;
+@width: (@column * @max_columns) + (@margin * @max_columns - @margin);
+
+// base colors
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// grid
+@background: @white;
+@font-color: @grayDarker;
+
+// links
+@link-color: #08c;
+@link-hover: darken(@link-color,15%);
+
+// accents
+@quiet-color: @font-color + #444;
+@loud-color: #000;
+
+// base and comp for coloring
+@base-color: #E5ECF9;
+@comp-color: spin(@base-color, 180);
+
+// base light/dark accents
+@base-lighter1: lighten(spin(@base-color, 5), 10%);
+@base-lighter2: lighten(spin(@base-color, 10), 20%);
+@base-lighter3: lighten(spin(@base-color, 15), 30%);
+@base-darker1: darken(spin(@base-color, -5), 10%);
+@base-darker2: darken(spin(@base-color, -10), 20%);
+@base-darker3: darken(spin(@base-color, -15), 30%);
+
+.lighter {
+    background-color: @base-lighter1;
+}
+
+.darker {
+    background-color: @base-darker1;
+}
+
+
+// tables
+@th-color: transparent;
+@td-color: transparent;
+@td-color-odd: #E5ECF9;
+@th-color-hover: #f5f5f5;
+
+// captions/boxes
+@caption-color: #eee;
+@box-color: #E5ECF9;
+@box_background: #E5ECF9;
+
+// notifications
+@error-font: #8A1F11;
+@error-bg: #FBE3E4;
+@error-border: darken(spin(@error-bg, -10), 3%);
+
+@notice-font: #514721;
+@notice-bg: #FFF6BF;
+@notice-border: darken(spin(@notice-bg, -10), 3%);
+
+@info-font: #205791;
+@info-bg: #D5EDF8;
+@info-border: darken(spin(@info-bg, -10), 3%);
+
+@success-font: #E6EFC2;
+@success-bg: #264409;
+@success-border: darken(spin(@success-bg, -10), 3%);
+
+// forms
+@form-font: black;
+@form-bg: white;
+@form-border: #bbb;
+
+// fonts
+
+
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Menlo, Droid, Monaco, Consolas, "Courier New", monospace;
+
+@baseFontSize:          .75em;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        1em;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    "Cantarell","Helvetica Neue", Helvetica, Arial, sans-serif;
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         (@font-color - #111) ; // empty to use BS default, @textColor
+
+

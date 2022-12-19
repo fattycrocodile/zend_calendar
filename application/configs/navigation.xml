@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+        
+        <index>
+            <class>home</class>
+	   		<label>Home</label>
+            <controller>index</controller>
+            <action>index</action>
+        </index>
+		<auth>
+            <class>auth</class>
+			<label>Auth</label>
+            <controller>auth</controller>
+            <action>index</action>
+            <pages>
+                <login>
+                    <label>Login</label>
+                    <controller>auth</controller>
+                    <action>login</action>
+                    <uri>/auth/login</uri>
+                </login>
+                <logout>
+                    <label>Logout</label>
+                    <controller>auth</controller>
+                    <action>logout</action>
+                    <uri>/auth/logout</uri>
+                </logout>
+            </pages>
+		</auth>
+        <blackouts>
+            <class>blackout</class>
+			<label>Blackouts</label>
+            <controller>blackout</controller>
+            <action>edit</action>
+        </blackouts>
+        <district>
+            <class>district</class>
+			<label>District</label>
+            <controller>district</controller>
+            <action>edit</action>
+        </district>
+		<master>
+            <class>master</class>
+			<label>Master</label>
+            <controller>master</controller>
+            <action>edit</action>
+		</master>
+		<cal>
+            <class>cal</class>
+			<label>Calendar</label>
+            <controller>cal</controller>
+            <action>index</action>
+		</cal>
+   	</nav>
+</config>

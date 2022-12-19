@@ -1,0 +1,197 @@
+/* A container should group all your columns. */
+.container {
+  width: @width;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+/* Use this class on any .span / container to see the grid. */
+.showgrid {
+  background: url('/images/grid.png');
+}
+
+/* Columns
+-------------------------------------------------------------- */
+
+/* Sets up basic grid floating and margin. */
+.column {
+	float: left;
+	margin-right: @margin;
+}
+
+/* Use this mixin to set the width of a column. you should avoid @levels wider then @width */
+.span (@level: 1) {
+	.column;
+	width: (@level * @column) + ((@level - 1) * @margin);
+}
+
+
+(~".span-@{max_columns}") {
+    margin-right:0;
+}
+
+.spans (@index) when (@index > 0) {
+	(~".span-@{index}") {
+		.span(@index);
+	}
+	.spans(@index - 1);
+}
+.spans (0) {}
+.spans (@max_columns);
+
+/* The last column in a row needs this class. */
+.last { margin-right: 0; }
+
+/* Use these classes to set the width of an input. */
+.input_span (@level: 1) {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: ((@level * @column) + ((@level - 1) * @margin) - 12px);
+}
+
+.input_spans (@index) when (@index > 0) {
+	(~"input.span-@{index}") {
+		.input_span(@index);
+	}
+    (~"textarea.span-@{index}") {
+		.input_span(@index);
+	}
+	.input_spans(@index - 1);
+}
+.input_spans (0) {}
+.input_spans (@max_columns);
+
+/* Add these to a column to append empty cols. */
+.append (@level: 1) {
+	padding-right: ((@column * @level) + (@level * @margin));
+}
+
+.appends (@index) when (@index > 0) {
+	(~".append-@{index}") {
+		.append(@index);
+	}
+	.appends(@index - 1);
+}
+.appends (0) {}
+.appends (@max_columns);
+
+/* Add these to a column to prepend empty cols. */
+.prepend (@level: 1) {
+	padding-left: ((@column * @level) + (@level * @margin));
+}
+
+.prepends (@index) when (@index > 0) {
+	(~".prepend-@{index}") {
+		.prepend(@index);
+	}
+	.prepends(@index - 1);
+}
+.prepends (0) {}
+.prepends (@max_columns);
+
+
+
+/* Border on right hand side of a column. */
+.border {
+  padding-right: (@margin* .4);
+  margin-right: (@margin*.5) !important;
+  border-right: (@margin*.1) solid #eee;
+}
+
+/* Border with more whitespace, spans one column. */
+.colborder {
+  padding-right: ((@column+@margin)/2)+(@margin* .4);
+  margin-right:  ((@column+@margin)/2)+(@margin*.5) !important;
+  border-right: (@margin*.1) solid #eee;
+}
+
+
+/* Use these classes on an element to push it into the
+next column, or to pull it into the previous column.  */
+// right now we create dummy stubs for backwards compatibility
+
+.pull (@level: 1) {
+	margin-left: (@column * @level * -1) + (@level * (@margin * -1));
+	float: left; 
+	position:relative;
+}
+.pulls (@index) when (@index > 0) {
+	(~".pull-@{index}") {
+		.pull(@index);
+	}
+	.pulls(@index - 1);
+}
+.pulls (0) {}
+.pulls (@max_columns);
+
+.push (@level: 1) {
+	margin: 0 ((@column * @level * -1) + (@level * -@margin)) 1.5em ((@column * @level) + (@level * @margin));
+	float: right; 
+    position:relative;
+}
+.pushes (@index) when (@index > 0) {
+	(~".push-@{index}") {
+		.push(@index);
+	}
+	.pushes(@index - 1);
+}
+.pushes (0) {}
+.pushes (@max_columns);
+
+/* Misc classes and elements
+-------------------------------------------------------------- */
+
+/* In case you need to add a gutter above/below an element */
+.prepend-top {
+  margin-top:1.5em;
+}
+.append-bottom {
+  margin-bottom:1.5em;
+}
+
+/* Use a .box to create a padded box inside a column.  */
+.box {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: @box_background;
+}
+
+/* Use this to create a horizontal ruler across a column. */
+hr {
+  background: #ddd;
+  color: #ddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 1px;
+  margin: 0 0 17px;
+  border: none;
+}
+
+hr.space {
+  background: #fff;
+  color: #fff;
+  visibility: hidden;
+}
+
+
+/* Clearing floats without extra markup
+   Based on How To Clear Floats Without Structural Markup by PiE
+   [http://www.positioniseverything.net/easyclearing.html] */
+
+.clearfix:after, .container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow:hidden;
+}
+.clearfix, .container {display: block;}
+
+/* Regular clearing
+   apply to column that should drop below previous ones. */
+
+.clear { clear:both; }

@@ -1,0 +1,81 @@
+/* @override http://calgen.private/styles/fileuploader.css */
+
+.qq-uploader {
+	position: relative;
+	.span(6);
+	.last;
+}
+
+.qq-upload-button {
+	display: block;
+	.push(1);
+    .span(4);
+    height: 2em;
+	text-align: center;
+	background: @base-darker2;
+	color: #fff;
+}
+
+.qq-upload-button-hover {
+	background: @base-darker3;
+}
+
+.qq-upload-button-focus {
+}
+
+.qq-upload-drop-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	.push(1);
+	.span(4);
+	height: 8em;
+	z-index: 2;
+	background: @comp-color;
+	text-align: center;
+}
+
+.qq-upload-drop-area span {
+	display: block;
+	position: absolute;
+	.span(4);
+	font-size: 1.5em;
+}
+
+.qq-upload-drop-area-active {
+	background: @base-color;
+}
+
+.qq-upload-list {
+list-style: none;
+}
+
+.qq-upload-list li {
+}
+
+.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+	margin-right: .5em;
+}
+
+.qq-upload-file {
+	
+}
+
+.qq-upload-spinner {
+	display: inline-block;
+	background: url("/images/loading.gif");
+	width: 15px;
+	height: 15px;
+	vertical-align: text-bottom;
+}
+
+.qq-upload-size,.qq-upload-cancel {
+}
+
+.qq-upload-failed-text {
+	display: none;
+}
+
+.qq-upload-fail .qq-upload-failed-text {
+	display: inline;
+}

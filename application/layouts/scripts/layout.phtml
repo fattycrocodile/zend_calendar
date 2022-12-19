@@ -1,0 +1,77 @@
+<?php
+echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- DOJO -->
+        <?php
+        if ($this->dojo()->isEnabled()) {
+            echo $this->dojo();
+        }
+        else {
+        }
+        ?>
+        <!-- Header information -->
+        <?php echo $this->headMeta(); ?>
+        <!-- Scripts -->
+        <?php echo $this->headScript(); ?>
+        <!-- Links -->
+        <?php echo $this->headLink(); ?>
+        <!-- Stylesheets -->
+        <?php echo $this->headStyle(); ?>
+        <!-- Site title -->
+        <?php echo $this->headTitle(); ?>
+</head>
+<body class="nihilo">
+<div id="layout" class="container">
+  <div id="header" >
+        <h1>CALGEN
+<?php if($this->title) {
+  echo ' - '.$this->title;
+}?></h1>
+    <div id="miniinfo" class="noprint" >
+    <?php echo $this->profileLink(); ?><br />
+    <?php echo $this->navigation()->breadcrumbs()->setLinkLast(false)->setMinDepth(0)->render(); ?>
+    </div>
+  </div>
+  <div id="menu" class="noprint" >
+    <?php echo $this->navigation()->menu(); ?>
+  </div>
+  <div id="messages" >
+    <?php if($this->error) { ?>
+        <div id="error">
+        <ul>
+                <?php echo $this->error;?>
+        </ul>
+        </div>
+        <?php } ?>
+    <?php if($this->success) { ?>
+        <div id="success">
+        <ul>
+                <?php echo $this->success;?>
+          </ul>
+        </div>
+        <?php } ?>
+    <?php if($this->notice) { ?>
+        <div id="notice">
+        <ul>
+                <?php echo $this->notice;?>
+          </ul>
+        </div>
+        <?php } ?>
+   <?php if($this->info) { ?>
+        <div id="info">
+        <ul>
+                <?php echo $this->info;?>
+          </ul>
+        </div>
+        <?php } ?>
+
+  </div>
+  <div id="content">
+    <?php echo $this->layout()->content ?>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>

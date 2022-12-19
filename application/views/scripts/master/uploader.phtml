@@ -1,0 +1,24 @@
+	<div id="uploader">
+		<noscript>
+			<p>Please enable JavaScript to use file uploader.</p>
+			<!-- or put a simple form for upload here -->
+		</noscript>
+	</div>
+
+    <script src="/scripts/fileuploader.js" type="text/javascript"></script>
+    <script>
+        function createUploader(){
+            var uploader = new qq.FileUploader({
+                element: document.getElementById('uploader'),
+                    action: '/master/upload',
+                debug: true
+            });
+        }
+
+        // in your app create uploader as soon as the DOM is ready
+        // don't wait for the window to load
+        window.onload = createUploader;
+    </script>
+
+	<p>To refresh the list after uploading, click the reload page button.<br /><br />
+	<input type="button" value="Reload Page" onClick="window.location.reload()"></p>

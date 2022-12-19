@@ -1,0 +1,15 @@
+<div id="calNav" class="span-24 last">
+    <div id="mininav" class="span-6 noprint">
+        <h2><?php $this->viewTitle; ?></h2>
+        <?php echo $this->miniCal; ?>
+        <hr>
+        <?php echo $this->navBox; ?>
+    </div>
+    <div id="weeknav" class="span-18 last">
+        <?php if (!empty($this->editForm)) {
+            echo $this->editForm;
+        }
+?>
+        <?php echo $this->spanView; ?>
+    </div>
+</div>

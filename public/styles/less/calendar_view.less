@@ -1,0 +1,120 @@
+/* calendar */
+
+div#calendar_wrapper {
+	.span(6);
+    .last;
+    font-size: .75em;
+}
+
+/* calendar header css */
+
+div#calendar_header {
+	text-align: center;
+	color: @font-color;
+    font-size: 1em;
+}
+
+div#calendar_header form select {
+	font-size: .9em;
+}
+
+div#calendar_header a#prevMonth {
+	text-decoration: none;
+	text-align: left;
+	font-size: .9em;
+}
+
+div#calendar_header a#nextMonth {
+	text-decoration: none;
+	text-align: right;
+	font-size: .9em;
+}
+
+div#calendar_header form {
+	display: inline;
+}
+
+/* calendar body css */
+
+table.calendar {
+	
+}
+
+table.calendar tr {
+	
+}
+
+table.calendar tr.header a:hover {
+	text-decoration: underline;
+}
+
+table.calendar tr.weekdays {
+	height: 12px;
+	background: @comp-color;
+	text-align: center;
+}
+
+table.calendar tr.days {
+	height: 14px;
+}
+
+table.calendar td {
+	border: 1px solid @background;
+}
+
+table.calendar td.today {
+	background: @comp-color;
+}
+
+table.calendar tr.days td.day_selected {
+	background-color: @comp-color;
+}
+
+#calendar_body table.calendar tbody tr.days td.week_selected {
+		background-color: @base-darker1;
+}
+
+
+#calendar_body table.calendar tbody tr.days td a {
+	display: block;
+	text-decoration: none;
+}
+
+/* WeekNav */
+#editor-label,#master_id-label,#master_id-element,#user_id-label,#user_id-element  {
+    display: none;
+}
+
+#weeknav {
+	font-size: small;
+}
+
+div#weekview > div#head {
+	background-color: @comp-color;
+    .span(3);
+}
+
+.calinfo {
+	background-color: @base-color;
+	margin-bottom: .2em;
+}
+
+.calinfo > a {
+	text-decoration: none;
+}
+
+.weekblock {
+	background-color: @base-darker1;
+    margin-top: 4px;
+}
+
+.subjectblock {
+	background-color: @base-lighter1;
+}
+
+.gradeblock {
+	background-color: @comp-color;
+}
+
+
+
